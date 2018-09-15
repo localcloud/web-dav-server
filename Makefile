@@ -3,9 +3,7 @@ BIN_NAME = web-dav-server
 
 build:
 	govendor build -o $(OUT_DIR)/$(BIN_NAME)
-install-dependencies:
+dep:
 	govendor sync
-run: install-dependencies build
+run: dep build
 	chmod +x $(OUT_DIR)/$(BIN_NAME); ./$(OUT_DIR)/$(BIN_NAME)
-execute:
-	 go run -race ./$(OUT_DIR)/$(BIN_NAME)
