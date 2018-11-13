@@ -54,7 +54,7 @@ func main() {
 		},
 	}
 	http.HandleFunc("/", wrapTargetByMiddleWares(handler.ServeHTTP, authMiddleware))
-	log.Fatalln(http.ListenAndServe(":5555", nil))
+	log.Fatalln(http.ListenAndServe(":5566", nil))
 }
 
 func authMiddleware(writer http.ResponseWriter, request *http.Request) bool {
